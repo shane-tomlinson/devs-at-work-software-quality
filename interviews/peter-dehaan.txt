@@ -1,0 +1,109 @@
+
+
+* What do you and your team do?
+---
+[pd] I break things before the customer sees them, and get paid to complain for a living.
+Basically QA acts as customer advocates and ensures that everything we ship is high quality.
+But mainly I just sit on Google Image search all day trying to find whimsical images to attach to bug reports or flood IRC with.
+
+
+
+* The relationship between QA and development is sometimes viewed as adversarial, but my experience with you is completely the opposite. QA is very much viewed as an integral part of the process. How do you facilitate this?
+---
+[pd] Every team/developer is different. I think everybody takes great pride in their art, so when a QA (or user) files bugs against your features, sometimes developers take it personally. It can be difficult, but you have to learn to not take things personally. I used to have a blog and it would be very difficult for me when people would come by and leave comments on my examples and complain about my technique or code. I quickly learned that most of the time they were right, so I'd end up rewriting my examples or having discussions in the comments and I ended up learning a lot that way. Now getting negative comments on blog posts is the highlight of any post for me. Now this also translates into any time I submit a pull request against a repo and you get some good code reviews of why my code is weak and how you can make it better.
+
+I had one Sr developer explain to me that he loved having QA trash his work and file a bunch of bugs, because it meant it was being looked at and used. He said as a person who used to have to answer his pager 24/7, having a bunch of bugs filed was great because it means it was less likely he'd have to be called in at all times of the night to come and fix issues if something went wrong.
+
+
+
+* You are well known for your humorous bug reports and animated GIFs, do you find this affects the relationship between QA and dev?
+---
+[pd] I try to not take things too seriously (obviously) so I try to add some levity to my bug reports. As for how this affects the relationship, you'd have to ask devs. I think I'm hilarious, but there is a slight possibility that there are some people out there that believe IRC and GitHub issues don't need animated GIFs every 45 seconds. Maybe devs see me as the guy at the table taking instagram photos of his dinner. :shrug:
+
+
+* What do you look for before signing off on a release?
+---
+[pd] quality, quality, quality! I think I'm more skilled in front end testing, so I like to run through as much of the flows as I can manually before releases to see the final product and workflows. If it's something that is slightly confusing or feels "off", then it's likely something that thousands (or millions) of people may also struggle with. It's all in the details, so shaving off any rough edges always helps.
+
+Also, looking through the bug base for the open issues and making sure there are not any great "one last thing" bugs in there which need to be addressed before unleashing our code on an unsuspecting public.
+
+
+
+* What do you consider a red flag/blocker?
+---
+[pd] Low code coverage numbers.
+Poor UX, is another big one. I've seen a lot of great and amazing apps which have been totally ruined by simple usability bugs or poor flows. It makes my fingers and eyes sad.
+
+
+* You have reviewed most of the code that has gone into the fxa-content-server and do a great job at suggesting architectural changes and ensuring consistency - what do you look for when doing a review?
+---
+[pd] Mainly just consistency. It's very tricky trying to remember coding between files and different pull requests. Basically this is how I start every morning. Looking through the bug dashboards for new bugs and reading all the comments and then reviewing each pull request and adding any comments which are hopefully relevant.
+
+
+
+* What are the most common problems you see?
+---
+[pd] Duplicated code, is probably the biggest and most common and trickiest to catch between files. Duplicating the same logic 14-15 times is OK, but once you hit the 16th time, it may be time to refactor the code.
+
+
+
+* You have facilitated an increase in the quality of the fxa-content-server's code through tooling and automatic enforcement of standards. What types of tools do you most commonly rely on?
+---
+[pd] I'm a huge fan of JSint and ESLint, and more recently jscs. All three have Grunt tasks, which is a huge bonus.
+
+
+
+* What are 5 tools frontend developers should be using if they aren't already?
+---
+[pd] In no particular order:
+1. Grunt (or similar build systems like Gulp) - This has changed the way I work considerably. Previously, I'd just have a bunch of random scripts on my drive that I'd have to try and remember to run, and in which order. I wish I could go back to previous projects and rewrite everything as a nice, easy build script rather than a bunch of random Node.js scripts.
+2. JSHint (or ESLint) - Validate your source code to ensure code consistency and "best practices". Both are pretty solid, although ESLint is a bit newer and more frequently updated/changed. Plus its a bit easier to extend and write custom linting tasks.
+3. Sass (and AutoPrefixer) - The best thing to happen to CSS since, like, ever. Plus AutoPrefixer is great because it lets you automatically add vendor prefixes based on a custom set of rules and browser adoption. Lets you reduce the amount of CSS/SCSS that you need to write.
+4. jscs - Enforce style consistency throughout your project. Does a lot of the style checking that you'll find in JSHint 2.x and ESLint, like enforcing consistent indenting, trailing commas, spaces around operators, etc. Everybody loves clean and consistent code, plus makes it a lot easier on big projects and projects which have a lot of contributors.
+5. Bower - Like npm, but for front end modules.
+6. Node.js - Changed my life, useful for servers or client side, or just quick file parsing.
+
+
+
+* What are 5 tools node/backend developers should be using if they aren't already?
+---
+[pd] In no particular order:
+1. Grunt - See above. It can do as much/little as you need in your project. I have a cheap little custom task which just greps your specified source files for copyright headers. Sounds dumb and simple (it is), but it keeps us honest.
+2. Git hooks - Run your Grunt/npm tasks before checking in or on each commit. There are a lot of great npm modules out there that let you simplify this as well.
+3. GitHub issues - If you see something, file something. TODOs in code are so 90s. Plus having everything in a bugbase makes it easier to track and collaborate.
+4. Travis - Run your tests automatically on a server and fail the build if anything goes wrong.
+5. Istanbul (or some other code coverage tool) - Having tests is awesome and required for ANY project. Finding out that all your fancy tests still only cover 31% of the code makes everybody sad. Find a code coverage library and set it up and run it in Travis so you can see your code coverage numbers on each run so we can track progress (positive or negative).
+6. CHANGELOG.md - Every project should have one! It's possible to get diffs between commits/tags/releases from GitHub without too much effort, but it's a lot better when you can quickly scan a changelog file to see what is different between your current version of a module and the latest version of a module in npm.
+7. David (CLI) - https://github.com/alanshaw/david - Extremely useful to quickly check a package.json's dependencies for out of date modules.
+8. package-json-validator.com - It's like PackageJsonLint!
+
+
+
+* What would you like to see developers do more of?
+---
+[pd] Bug triages. Public bug bases. I'm a huge fan of keeping a project's bug base alongside the code since it makes it extremely easy to look at code, file a bug, file a pull request to close the bug. Plus, GitHub lets me do inline animated GIFs to annoy my coworkers. Having a big list of issues is great, but not extremely useful unless you sit down as a team and prioritize them by milestone and severity so you can focus on the more important bugs first and newer developers/QA/community people can easily find the easier bugs to help contribute to a project.
+
+Also, if you're using GitHub, use the issue labels to tag your issues as "GoodFirstBug" to make it easier for new developers to the project to quickly jump in and start contributing. Not to mention labeling all the bugs makes it much easier to quickly see all your open UX or testing issues.
+Similarly, set up GitHub releases so you can easily specify when bugs are planned to be fixed.
+
+
+
+* Other than write consistent, well-tested, bug-free code, what can a developer do to make your job easier?
+---
+[pd] File more issues in GitHub. It can be tricky as a QA when you file a bug and a dev says "Oh yeah, we knew about that". Nothing worse than surprise bugs. Using "TODO" throughout your code is a poor replacement for a bug report where you can have discussions or arguments or GIF battles.
+Plus, learn to design. Reading a book or two on UX wouldn't kill you people.
+
+
+
+* What common misconceptions exist about QA?
+---
+[pd] That we're all just a bunch of nice people. A lot of us are just cranky old jerks.
+The main one is that it's NOT dev vs qa. We're all on the same team, and we all want the same thing (to gang up on the Marketing team).
+
+
+
+* Any other thoughts?
+---
+[pd] QA loves you. Lets go build beautiful things together. <3
+
+

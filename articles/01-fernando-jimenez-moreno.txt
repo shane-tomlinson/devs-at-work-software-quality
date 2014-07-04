@@ -29,14 +29,14 @@ What are the topics?
 
 I have specific questions that I want to hear other people’s opinions about:
 
-* How do other developers approach writing high quality, maintainable software? 
-* What does "high quality, maintainable software" even mean? 
-* What are my peers looking for when doing code review? 
-* How does development/Security/QA fit together to support each other’s efforts? 
-* What matters to Security? What do they look for when doing a security review/audit? 
-* What matters to QA? What do they look for before signing off on a release? 
-* What tools are used to ease the burden? 
-* What can *I* do, as a developer, to write great software and facilitate the entire process? 
+* How do other developers approach writing high quality, maintainable software?
+* What does "high quality, maintainable software" even mean?
+* What are my peers looking for when doing code review?
+* How does development/Security/QA fit together to support each other’s efforts?
+* What matters to Security? What do they look for when doing a security review/audit?
+* What matters to QA? What do they look for before signing off on a release?
+* What tools are used to ease the burden?
+* What can *I* do, as a developer, to write great software and facilitate the entire process?
 
 How will the articles be structured?
 
@@ -48,13 +48,13 @@ Now, on to the first two interviewees.
 
 ==============================
 
-The first interviewee is Fernando Jimenez, a FirefoxOS developer from Telefonica. I had the opportunity to work with Fernando last autumn when we integrated Firefox Accounts into First Time Experience of FirefoxOS. I was always impressed not only with Fernando’s technical prowess, but also his ability to bring together the employees of three companies in four cities on two continents to work towards a common goal.
+The first interviewee is Fernando Jimenez Moreno, a FirefoxOS developer from Telefonica. I had the opportunity to work with Fernando last autumn when we integrated Firefox Accounts into First Time Experience of FirefoxOS. I was always impressed not only with Fernando’s technical prowess, but also his ability to bring together the employees of three companies in four cities on two continents to work towards a common goal.
 
 Fernando’s interview is focused on how to bring a disparate group together under a common goal, common standards, code reviews, and being pragmatic.
 
 —————————————————————————
 
-S: What do you and your team at Telefonica do? 
+S: What do you and your team at Telefonica do?
 
 F: I’m part of what we call the platform team. We have different teams at Telefonica, one is focused on front end development in Gaia, and the other one is focused on the platform itself, like Gecko, Gonk and external services. So we work in several parts of the FirefoxOS stuff, from Gecko to Gaia, to services like the SimplePush server. I’ve personally worked on things like the REL interface layer, payments, applications API and other Web APIs, and almost always jumping from Gecko to Gaia and back. Most recently, I started working on this Loop project, which like I said, is Telefonica and Mozilla’s WebRTC service.
 

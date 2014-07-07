@@ -1,46 +1,25 @@
-	1.	What is it?
-	2.	Why?
-	3.	Who is the audience?
-	4.	What are the topics?
-	5.	Future
-	6.	Feedback/How to participate
-	7.	Interview 1 - Fernando
-	8.	Interview 2 - Brian Warner
+We write a lot of software at Mozilla. Some of the software is superb, some could honestly use a rewrite. It's difficult to write software that "works". It's even more difficult to write software that could be considered high quality.
 
-What is it?
+I have been trying to learn how to write high quality software my entire professional career and still struggle. Luckily, I am part of an amazing community that has a lot to teach. Our community builds projects like MDN, Firefox and FirefoxOS; projects that are complex, huge in scope, developed over the course of many years, and require the effort of thousands. Projects like these only successful because of the skill of their participants.
 
-We write a lot of software at Mozilla. Some of the software we write is superb. Some is... garbage.
+Several community members have agreed to share their thoughts surrounding the question "How can we, as developers, write more superb software?" This is the first in a series of interviews where I take on the role of an apprentice to learn from some of Mozilla’s finest.
 
-How can we, as developers, write more superb software?
+Since shipping software to millions of people involves more than just writing code, the interviews cross functional lines. Folks from QA, Security and development have all already been interviewed, and I hope to question even more areas in the future.
 
-The Mozilla community is made up of some of the best Quality Assurance (QA), Ops and developers in the industry. Several of them have volunteered time to share their view on how to develop quality software. This is the first in a series of interviews that explores software quality from their viewpoints.
-
-My goal is to learn from some of Mozilla’s finest and spread their wisdom far and wide. We are an open source company, our knowledge can be open sourced along with our code.
-
-Why?
-
-It’s difficult to write software that “works”. It’s even more difficult to write software that works, meets a need, is beautiful, and is secure. In my interviews, I take on the role of an apprentice to people I respect, and I want others to have that opportunity to learn from them too.
-
-Who is the audience?
-
-If you are reading this, you are among the target audience, no matter what language you develop in or your level of experience. I attempt to ask the interviewees high level questions that can be applied to any language.
-
-What are the topics?
+The target audience is anybody who writes software, regardless of the preferred language or level of experience. If you are reading this, you are part of the part of the target audience! I ask the interviewees high level questions that can be applied to any language, often the questions are about processes and tooling.
 
 I have specific questions that I am interested in:
 
-* How do other developers approach writing high quality, maintainable software? 
+* How do other developers approach writing high quality, maintainable software?
 * What does "high quality, maintainable software" even mean?
 * What are my peers looking for when doing code review?
 * How does development/Security/QA fit together to support each other’s efforts?
 * What matters to Security? What do they look for when doing a security review/audit?
 * What matters to QA? What do they look for before signing off on a release?
-* What tools are used to ease the burden?
+* What tools are people using?
 * What can *I* do, as a developer, to write great software and facilitate the entire process?
 
-How will the articles be structured?
-
-In each article, I will present the highlights of one or two interviews. Each interview will contain a short introduction to the person being interviewed, and a series of questions and their answers.
+I will present the highlights of one or two interviews in each article. Each interview will contain a short introduction to the person being interviewed, and a series of questions and their answers.
 
 Where an interview’s audio was recorded, I will provide a link to the full transcript. If the interview was done over email, I will link to the contents of the original email.
 
@@ -48,19 +27,19 @@ Now, on to the first interview.
 
 ==============================
 
-The first interviewee is Fernando Jimenez Moreno, a FirefoxOS developer from Telefonica. I had the opportunity to work with Fernando last autumn when we integrated Firefox Accounts into First Time Experience of FirefoxOS. I was always impressed not only with Fernando’s technical prowess, but also his ability to bring together the employees of three companies in four cities on two continents to work towards a common goal.
+The first interviewee is Fernando Jimenez Moreno, a FirefoxOS developer from Telefonica. I had the opportunity to work with Fernando last autumn when we integrated Firefox Accounts into First Time Experience of FirefoxOS. I was impressed not only with Fernando’s technical prowess, but also his ability to bring together the employees of three companies in six countries on two continents to work towards a common goal.
 
-Fernando’s interview is focused on how to bring a disparate group together under a common goal, common standards, code reviews, and being pragmatic.
+Fernando’s talks about how Telefonica became involved in FirefoxOS, how to bring a disparate group together, common standards, code reviews, and being pragmatic.
 
 —————————————————————————
 
-S: What do you and your team at Telefonica do? 
+S: What do you and your team at Telefonica do?
 
 F: I’m part of what we call the platform team. We have different teams at Telefonica, one is focused on front end development in Gaia, and the other one is focused on the platform itself, like Gecko, Gonk and external services. We work in several parts of FirefoxOS, from Gecko to Gaia, to services like the SimplePush server. I’ve personally worked on things like the REL interface layer, payments, applications API and other Web APIs, and almost always jump from Gecko to Gaia and back. Most recently, I started working on the Loop project, which is Telefonica and Mozilla’s WebRTC service.
 
 S: How did Telefonica get involved working with Mozilla?
 
-Well, that’s a longer story. How did we get involved? Well, we started working on a similar project to FirefoxOS, but instead of being based on Gecko, we were working with WebKit. So we were creating this open web device platform based on WebKit. When we heard about Mozilla doing the same with Gecko, we decided to contact you and started working on the same thing. Our previous implementation was based on a closed source port of WebKit and it was really hard to work that way. Since then, my day to day work is just like any other member of Telefonica’s FirefoxOS team, which I believe is pretty much the same as any other Mozilla engineer working on B2G.
+Well, that’s a longer story. We started working on a similar project to FirefoxOS, but instead of being based on Gecko, we were working with WebKit. So we were creating this open web device platform based on WebKit. When we heard about Mozilla doing the same with Gecko, we decided to contact you and started working on the same thing. Our previous implementation was based on a closed source port of WebKit and it was really hard to work that way. Since then, my day to day work is just like any other member of Telefonica’s FirefoxOS team, which I believe is pretty much the same as any other Mozilla engineer working on B2G.
 
 S: You are known as a great architect, developer, and inter-company coordinator. For Firefox Accounts on FirefoxOS, you brought together people from Telefonica, Telenor, and Mozilla. What challenges are present when you have to work across three different companies?
 
@@ -78,7 +57,7 @@ S: Whenever new people come into the project, how can you go about educating the
 
 F: I would say, at first, documentation. I guess reviews and day to day work, where people are already familiar with these standards participate in this education process. There are also tools like linters or git and mercurial hooks to enforce some of these standards.
 
-S: FirefoxOS code is Gonk, which is linux basically, Gecko and Gaia. Each system is large, complex, and intimidating to a newcomer. You regularly submit patches to Gecko and Gaia. You had to learn about all of these systems somehow. Whenever you want to go dive into a project, how do you learn about the system you want to work in?
+S: FirefoxOS code is Gonk, which is Linux basically, Gecko and Gaia. Each system is large, complex, and intimidating to a newcomer. You regularly submit patches to Gecko and Gaia. You had to learn about all of these systems somehow. Whenever you want to go dive into a project, how do you learn about the system you want to work in?
 
 F: I’m afraid there is no magic technique. What works for me might not work for others for sure. What I try to do is to read as much documentation as possible inside and outside of the code, if it’s possible. I try to ask the owners of that code when needed, and also if that’s possible, because sometimes they just don’t work in the same code or they are not available. I try to avoid reading the code line by line at first and I always try to understand the big picture before digging into the specifics of the code. I think that along the years, you somehow develop this ability to identify patterns in the code and to identify common architectures that help you understand the software problems that you are facing.
 
@@ -97,21 +76,6 @@ F: Yeah, now that we are starting to have good tests in FirefoxOS, we have to ma
 S: I feel like there is this tension between what level of test to write. Some people say “unit tests are worthless because if the interface changes then you have to go update all the tests and functional tests are where it’s at.” And other people are like “nooo, you’ve gotta unit test everything and functional tests won’t tell you where the problem is, it’ll only tell you there is problem.” I would love to write huge numbers of both, but sometimes there is not enough time. I don’t know if that’s a false assumption on my part. How do you deal with testing in time constrained situations? Do you try to do both functional tests and unit tests? If you had to ditch one, where do you focus your testing efforts?
 
 F: I guess it depends on the time that you have for the coding part. I usually approach it, I think the wrong way. I write the code then write the tests, when I should probably do the opposite. I think it’s this urge to see something working. Because that’s actually your job to make the patch work, and then you need to make sure it’s well written and it works well and it doesn’t break so you write the tests for it. But, I guess, I don’t know which tests I would choose first. I mean functional tests are done to assure that your code works as suspected, but you can also rely on your personal tests on the device, and your manual tests. So you can probably avoid writing functional tests at first and focus on unit tests that tests only specific functionality of the code, specific parts of the code. I don’t know which one I would choose, it depends on the patch and the time that I have. I also ask “what would the reviewer ask me to write?” I mean, we all love tests, and we would all like to write as many tests as possible, but in the end we have a lot of patches to write and we just want the patch to be landed. We need to make the reviewer happy, if he wants this test, I will write this test. That’s it.
-
-````````````` Maybe cut?
-S: Memory management is something developers have not had to worry about since Internet Explorer was losing circular references back in IE6 and IE7. On a resource constrained device like a low end FirefoxOS phone, we have to worry about this stuff again. Has this focus on memory management changed the way that you write apps, and if so, how? And, has it changed the way you write normal web apps for a normal browser?
-
-F: When you write the web apps, you don’t really need to worry about memory management in terms of it’s hard to leak memory when writing a web application. You trust the browser trying to do the right thing, but yeah, absolutely. Memory constraints, I think affect the way you design your software and the way you write your code. I mean things like lazy loading or cleanup routines are well known, good practices. Cleanup routines mean you have to release unused objects or if you are using cache, you have to release them. You have to clean it if you are not using it, it’s common sense writing code right. In FirefoxOS, not only looking for the memory footprint, but also for improved performance. In FirefoxOS, we have a lot of issues with the first paint event, we have to make sure that the launch path is as fast as possible so the user gets feedback as soon as possible, so you have to write your code with that in mind. You have to lazy load stuff, show things as fast as possible. Also, you have to be aware in FirefoxOS, your application can be killed at any point in its life cycle, so that your app should be ready to recover from that situation. That affects the way you write your code.
-
-S: Has that affected how you do development for other web pages, for non FirefoxOS web pages?
-
-F: Well, I think it’s also beneficial for web applications running on other platforms, but since FirefoxOS is the low end platform for web applications, it’s the best platform to test your working. You will suffer there.
-
-S: So you mentioned the cleanup routines. It’s something that I feel is under appreciated in web development. I feel that people have a grasp on lazy loading, but a lot of people still don’t understand that they should clean up their references whenever an object goes away. I haven’t seen very many articles or people talking about why.
-
-F: It also depends on the garbage collector. Maybe it’s platform specific also. You thought it’s hard to write your code for a specific implementation of the browser, and you just need to use the profiler in that case. It’s hard to think about the garbage collection when you need to release references, but usually you need to use, to do it, when you don’t need it. Basically, it’s common sense. And also the event listeners and all this stuff that’s taking memory and you are not using it.
-
-to here`````````````````````````
 
 S: You designed an API to talk between Gaia and Gecko when Firefox Accounts work first started. Developers often hate doing up front design, they just like to do it as they go along. When have you found early API design like that helpful, and have you ever found that can hinder or make things more difficult?
 
@@ -141,6 +105,8 @@ S: You already mentioned that you try to take it as a learning experience whenev
 
 F: Yeah, for sure. I mean just the simple fact of reviewing a patch is a teaching experience. You are telling the coder what you think is more correct. Sometimes there is a lack of theory and reasons behind the comments, but we should all do that, we should explain the reasons and try to make the process as good as possible.
 
+---------------------------
 
-==============================
+In the next article, I will interview Brian Warner, from Mozilla's Cloud Services team. Brian is a security expert who shares his thoughts on architecting for security, analyzing threats, "belts and suspenders", and writing code that is auditable.
 
+As a parting note, I have had a lot of fun doing these interviews and I would like your input on how to make this series more worthwhile. If you have suggestions, or if you would like to nominate somebody from the Mozilla community who you feel has a lot to teach, please let me know. I even invite you to offer yourself up for an interview. The Mozilla community has so much to offer. Email me at stomlinson@mozilla.com.

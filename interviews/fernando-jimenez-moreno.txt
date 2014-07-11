@@ -1,4 +1,4 @@
-What do you and your team at Telefonica do? 
+What do you and your team at Telefonica do?
 
 So, I’m part of the, what we call the platform team. We have different teams at Telefonica, one is focused on front end development in Gaia, and the other one is focused on the platform itself, like Gecko, Gonk and maybe external services. So we work in several parts of the FirefoxOS stuff, from Gecko to Gaia, to services like the SimplePush server, which telefonica also have their own implementation. I’ve personally worked on things like the REL interface layer, payments, applications API and other Web APIs, and almost always jumping from Gecko to Gaia and back. Most recently, I started working on this Loop project, which like I said, is Telefonica and Mozilla’s WebRTC service.
 
@@ -152,17 +152,17 @@ And then say, you did have one of these patches that was 3 different commits. Be
 
 I usually ask the developer to do it, to squash it, or sometimes they do it themselves.
 
-That makes a lot of sense. So you reviewed one of my large patches which was to integrate FxA into B2G, into the first time experience I believe it was. You placed of, much more of an emphasis on consistency than any review I have had. By far. 
+That makes a lot of sense. So you reviewed one of my large patches which was to integrate FxA into B2G, into the first time experience I believe it was. You placed of, much more of an emphasis on consistency than any review I have had. By far.
 
 I was a pain in the ass then?
 
-No, no, not at all. But how do you think that consistency contributes to overall code quality? 
+No, no, not at all. But how do you think that consistency contributes to overall code quality?
 
 Well it certainly helps with overall code quality that. When I do reviews these kinds of comments as “nit:” which is quite common in Mozilla, meaning that “I would like to see that changed, but you still get my positive review if you don’t change it, but I would really like to see them changed.”
 
 Well, I’ve started marking them with “nit:” because of that, you know, whenever I’m doing reviews. I’ll put “nit: Change the case here” or whatever.
 
-But, if you ended up not doing it, please tell me, so I will do it in a follow up bug or whatever. 
+But, if you ended up not doing it, please tell me, so I will do it in a follow up bug or whatever.
 
 Fantastic, here’s one for B2G especially - as a reviewer, how can you ensure that your comments are not taken too personally by the developer? Yeah, that’s the first part of the question, and the second part is, as a developer, how can you be sure that you don’t take it too personally?
 
@@ -236,4 +236,33 @@ Yes, thank you for doing this, I think this is great. It’s going to be very us
 
 It’s fun for me, and it gives me a reason to talk to people that I don’t always have a normal reason to talk to, you know? That’s one of the cool things about it.
 
-This has been fun man, thank you for your time. 
+This has been fun man, thank you for your time.
+
+==============
+
+follow on questions
+
+S: Do you have a snippet of code, from you or anybody else, that you think is particularly elegant that others could learn from?
+
+F: I am pretty critical with my own code so I can't really think about a snippet of code of my own that I am particularly proud enough to show :). But if I have to choose a quick example I was quite happy with the result of the last big refactor of the call log database for the Gaia Dialer app [3] or the recent Mobile Identity API implementation [4].
+
+[3] - https://github.com/mozilla-b2g/gaia/blob/master/apps/communications/dialer/js/call_log_db.js
+[4] - https://mxr.mozilla.org/mozilla-central/source/services/mobileid/
+
+S: What open source projects would you like to encourage people to participate in, and where can they go to get involved?
+
+F: Firefox OS of course! No, seriously, I believe Firefox OS gives to software engineers the chance to get involved in an amazing open source community with tons of technical challenges from low level to front end code. Having the chance to dig into the guts of a web browser and a mobile operative system in such an open environment is quite a privilege. It may seem hard at first to get involved and jump into the process and the code, but there are already some very nice docs at the MDN [5] and a lot of nice people willing to help on IRC (#b2g and #gaia) [5], the mailing lists (dev-b2g and dev-gaia) [7] or ask.mozilla.org [8].
+
+[5] - https://developer.mozilla.org/en-US/Firefox_OS
+[6] - https://wiki.mozilla.org/IRC
+[7] - https://lists.mozilla.org/listinfo
+[8] - https://ask.mozilla.org/questions/
+
+S: How can people keep up to date about what you are working on?
+
+F: I don't have a blog, but I have my public Github account [7] and my Twitter account [8].
+
+[8] - https://github.com/ferjm
+[9] - https://twitter.com/f_jimenez
+
+
